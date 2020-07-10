@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace IntranetApp.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class LevelThreeController : ControllerBase
     {
         [HttpGet]
@@ -30,6 +30,7 @@ namespace IntranetApp.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                return new string[] { "There was an error with the app" };
             }
             return new string[] { "value1", "value2" };
         }
