@@ -24,6 +24,8 @@ namespace IntranetApp.Controllers
                 Console.WriteLine("starting");
                 process.StartInfo.UseShellExecute = true;
                 process.Start();
+                var exited = process.WaitForExit(1000 * 10);     // (optional) wait up to 10 seconds
+                Console.WriteLine($"exit {exited}");
             }
             catch (Exception e)
             {
